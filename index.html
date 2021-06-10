@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <link rel="stylesheet" href="Index.css" />
+			<link rel="preconnect" href="https://fonts.gstatic.com"> 
+			<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+      <title>Locate ISS</title>
+    </head>
+
+  <body>
+  <div id="container">
+    <div id="header">
+	    <small>Built by <a href="https://twitter.com/brendandeforest">Brendan DeForest</a></small>
+    </div>
+	<div id="content">
+    <h1>Where is The International Space Station?</h1>
+		<img src="images/ISS-2011.png" alt="Internation Space Station">
+
+		<table id="locTable">
+        <tr>
+            <th>Location</th>
+            <td id="country">Loading..</td>
+  		</tr>
+        <tr>
+            <th>Speed</th>
+            <td><span id="velocity"></span><span> km/s</span></td>
+  		</tr>
+        <tr>
+            <th>Date</th>
+    		<td id="date">00/00/00</td>
+  		</tr>
+  		<tr>
+            <th>Time</th>
+    		<td id="time">00:00</td>
+  		</tr>
+  		<tr>
+    		<th>Latitude</th>
+    		<td id="lat">00.00</td>
+  		</tr>
+  		<tr>
+    		<th>Longitude</th> 
+    		<td id="long">00.00</td> 
+  		</tr>
+		</table>
+
+        <div id="map"></div>
+
+		<button type=submit id="refresh" onclick="update()">Refresh</button>
+		<button type=submit id="pause" onclick="pause()">Pause</button>
+		<button type=submit id="dark" onclick="darkMode()">Toggle Dark Mode</button>
+<!--		<button type=submit id="pause" onclick="unPause()">Unpause</button> -->
+		<br>
+		<small>Unpause button temporarily unavailable. Please Refresh page to restart automatic updates.</small>
+        <div id="av-orbit">
+        <script>
+            var avOrbitProperties = {
+                size: 'medium',
+                lang: 'en'
+            };
+            </script>
+            <script src="https://astroviewer.net/widgets/widgets/orbit.js"></script>
+        </div>
+
+     <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBg88ViZn_XZBbBQZNLr5JZG2ipiEdBeaA&callback=initMap&libraries=&v=weekly" async ></script>
+    <script src="Index.js"></script>
+
+    </div>
+  </body>
+</html>
