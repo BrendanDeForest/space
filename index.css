@@ -1,33 +1,30 @@
 body,
 html {
-height: 100%;
-margin: 0 auto;
-padding: 0;
-font-family: 'Space Mono', monospace;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Space Mono', monospace;
 }
 
 
 body {
   /* background-image: url('images/stars.jpeg'); */
-  background-color: #fff;
-  background-repeat: repeat;
+    background-color: #fff;
+    background-repeat: repeat;
 }
 
 img {
 	max-width:50%;
-  max-height:50%;
+    max-height:50%;
 }
 
-table, th, td {
-  text-align: left;
-}
-td {
-  border: 1px solid black;
+th {
+    text-align: right;
 }
 
 
 #header {
-  padding-left: 5%;	
+    padding-left: 5%;	
 }
 
 small {
@@ -35,14 +32,26 @@ small {
 }
 
 .dark-mode {
-  background-color: black;
-  color: white;
+    background-color: black;
+    color: white;
+}
+.dark-mode th {
+    background: #333;
+}
+.dark-mode th, .dark-mode td {
+    border-color: #fff;
+    }
+
+th,td {
+    border: 1px solid #000;
+    padding: 5px;
+}
+th {
+    background: #eee;
 }
 
-.dark-mode td {
-  border: 1px solid white;
-}
 
+/* 
 @media (prefers-color-scheme: light) {
     body {
         background-color: white;
@@ -50,7 +59,6 @@ small {
     }
 }
 
-/* Dark mode
 @media (prefers-color-scheme: dark) {
     body {
         background-color: black;
