@@ -12,6 +12,7 @@ Ideas
 - Sort through address components for type country to properly display how i want it.
 - Notify user via twitter, text, or email when ISS is within X distance from home.
 - Look into Server-side geo-coding to prevent hitting query limit.
+- Change function to run on button click.
 
 ---------------------- */
 
@@ -52,7 +53,7 @@ function initMap() {
         console.log("No results found");
       }
     } else {
-      document.getElementById('country').innerHTML = "a remote area";
+      document.getElementById('country').innerHTML = "Over an ocean, desert, or other remote area";
       console.log("Geocoder failed due to: " + status);
     }
   });
@@ -62,15 +63,20 @@ updateLLV();
 updateTime();
 initMap();
 
-};
+};/* /update() */
 
 update();
 
-var run =  setInterval('update()', 5000);
-
-function pause() {
-	clearInterval(run);
+function autoUpdate() {
+    var run =  setInterval('update()', 5000);
+    console.log("autoUpdate is running");
+    document.getElementById("pause").addEventListener("click",pause);
+    function pause(){
+        clearInterval(run);
+        console.log("autoUpdate has stopped");
+    }
 };
+
 
 //DARK MODE 
 	function darkMode() {

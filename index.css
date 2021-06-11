@@ -8,7 +8,7 @@ html {
 
 
 body {
-  /* background-image: url('images/stars.jpeg'); */
+/*    background-image: url('images/stars.jpeg'); */
     background-color: #fff;
     background-repeat: repeat;
 }
@@ -72,5 +72,5 @@ th {
 }
 #content {
     max-width: 90%;
-    padding: 10%;
+    padding: 5%;
 }
